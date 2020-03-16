@@ -1,0 +1,12 @@
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.espacio{
+    margin-top: 1em;
+}
+
+.card{
+    margin: 0 auto;
+}
