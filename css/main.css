@@ -10,3 +10,8 @@ img {
 .card{
     margin: 0 auto;
 }
+
+.row{
+    align-items: center;
+    justify-content: center;
+}

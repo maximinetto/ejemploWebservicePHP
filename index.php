@@ -1,34 +1,7 @@
 <?php
-
-require('vendor/autoload.php');
-require_once('functions.php'); 
-
-use GuzzleHttp\Client;
-
-const URL = 'http://www.omdbapi.com';
-const APIKEY = 'e9aefa8c';
-
-$client = new GuzzleHttp\Client();
-
-$response = $client->get(URL, [
-    'query' => ['s' => 'pulp', 'apikey' => APIKEY]
-]);
-
-
-/*echo $response->getStatusCode();
-
-echo $response->getHeader('content-type')[0];
-
-echo $response->getBody();
-
-var_dump( json_decode($response->getBody(), true));
-
-*/
-
-$json_response = json_decode($response->getBody(), true);
-
-$films = $json_response["Search"];
-
+require_once 'controller/c_pelicula.php';
+require_once 'functions.php';
+$films = listado();
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +17,16 @@ $films = $json_response["Search"];
 
 <body>
     <div class="container">
+        <div class="row m-5">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Buscar</label>
+                    <input type="text" class="form-control" id="txtbuscar" name="txtbuscar" 
+                    placeholder="Ingresa el título">
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+        </div>
         <div class="row">
 
             <?php
@@ -65,18 +48,18 @@ $films = $json_response["Search"];
                     </div>
                 </div>
 
-            <?php
+                <?php
 
-                             
 
-            ?>
-    
+
+                ?>
+
 
             <?php
 
                 $index++;
                 $espacioAgregado = agregarEspaciado($index);
-                if($espacioAgregado){
+                if ($espacioAgregado) {
                     $index = 0;
                 }
             }

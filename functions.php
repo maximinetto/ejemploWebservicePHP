@@ -9,3 +9,5 @@ function agregarEspaciado($index): bool{
 
     return false;
 }
+
+?>
