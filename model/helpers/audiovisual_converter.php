@@ -1,6 +1,7 @@
 <?php
 
-
+    require_once __DIR__ . "/../serie.php";
+    require_once __DIR__ . "/../episodio.php";
     
     final class AudioVisualConverter{
         private $idVideo;

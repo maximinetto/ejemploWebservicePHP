@@ -14,6 +14,9 @@
             parent::__construct($idFilm, $title, $year, $img);
         }
 
+        public function tipo(){
+            return "Película";
+        }
         
     }
 

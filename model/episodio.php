@@ -12,4 +12,8 @@ class Episode extends AudioVisual{
     {
         parent::__construct($idEpisode, $title, $year, $img);
     }
+
+    public function tipo(){
+        return "Episodio";
+    }
 }

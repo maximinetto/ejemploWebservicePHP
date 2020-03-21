@@ -14,6 +14,10 @@
             parent::__construct($idSerie, $title, $year, $img);
         }
         
+        public function tipo(){
+            return "Serie";
+        }
+
     }
 
 ?>

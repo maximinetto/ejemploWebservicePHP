@@ -1,8 +1,8 @@
 <?php
 
-require ('../vendor/autoload.php');
-require_once '../model/pelicula.php';
-require_once '../model/helpers/audiovisual_converter.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ .  '/../model/pelicula.php';
+require_once __DIR__ .  '/../model/helpers/audiovisual_converter.php';
 
 const URL = 'http://www.omdbapi.com';
 const APIKEY = 'e9aefa8c';

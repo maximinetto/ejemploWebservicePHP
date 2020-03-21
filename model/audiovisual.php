@@ -1,6 +1,6 @@
 <?php
 
-class AudioVisual
+abstract class AudioVisual
 {
     private $idVideo, $year, $title, $runtime, $ratings, $director, $genre, $poster;
     private $actors;
@@ -24,6 +24,8 @@ class AudioVisual
         $this->year = $year;
         $this->img = $img;
     }
+
+    abstract public function tipo();
 
     /**
      * Get the value of idVideo
